@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Oswald&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <h1>Calculator</h1><br><br>
+        <div class="bar">
+            <div id="inside"><h1 id="content"></h1>
+                </div>
+            </div>
+        <div class="container" id="row1">
+            <button id="one" class="numbers">1</button>
+            <button class="numbers" id="two">2</button>
+            <button id="three" class="numbers">3</button>
+            <button id="plus" class="operators"> + </button>
+        </div>
+        <div class="container" id="row2">
+                <button id="four" class="numbers">4</button>
+                <button class="numbers" id="five">5</button>
+                <button id="six" class="numbers">6</button>
+                <button id="minus" class="operators"> - </button>
+            </div>
+        <div class="container" id="row3">
+                <button id="seven" class="numbers">7</button>
+                <button class="numbers" id="eight">8</button>
+                <button id="nine" class="numbers">9</button>
+                <button id="times" class="operators"> × </button>
+            </div>
+        <div class="container" id="row4">
+                <button id="zero" class="numbers">0</button>
+                <button class="numbers" id="dot">.</button>
+                <button id="equals" onclick="operate()">=</button>
+                <button id="divisor" class="operators"> ÷ </button>
+            </div>
+        <div class="container" id="row5">
+                <button id="reset" onclick="reset()">Clear</button>
+            </div>
+            <div class="drawings">
+                <img src="githublogo.svg" id="github">
+                <img src="calcicon.svg" id="icon"></div>
+        <script src="code.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    </body>
+</html>

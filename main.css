@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    margin: 0;
+}
+h1 {
+    text-emphasis: none;
+    font-family: "Oswald", serif;
+    font-weight: normal;
+}
+#content {
+    margin-top: -0.01px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.bar {
+    margin: 20px; 
+    width: 400px;
+    height: 50px;
+    border: 0.01px solid gainsboro;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto; margin-right: auto;
+}
+.operators {
+    background: #5588a3;
+    border: none;
+}
+button:hover {
+    opacity: 0.9;
+}
+button {
+    font-family: "Arvo", sans-serif;
+    float: left;
+    margin: 5px;
+    padding: 10px 30px 10px 30px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 0.3px solid gainsboro;
+    transition: 100ms;
+    color: #454d66;
+}
+#row3 button {
+    padding: 10px 29px 10px 29px;
+}
+#row4 button {
+    padding: 10px 31px 10px 31px;
+}
+#row5 button {
+    padding: 10px 130px 10px 130px;
+}
+button:active {
+    transform: translate(3px, 5px)
+}
+.numbers {
+    background:  #f6f6f6;
+}
+#content {vertical-align: middle}
+#icon {
+    float: right;
+    display: inline
+}
+/*Make rows shape similar by correcting certain paddings*/
+#four {padding: 10px 25px 10px 28px}
+#minus {padding: 10px 33px 10px 30px}
+.drawings {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.drawings img {
+    padding: 10px;
+    width: 50px;
+}
