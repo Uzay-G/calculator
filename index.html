@@ -9,7 +9,7 @@
     <body>
         <h1>Calculator</h1><br><br>
         <div class="bar">
-            <div id="inside"><h1 id="content"></h1>
+            <div id="inside"><h1 id="content">0</h1>
                 </div>
             </div>
         <div class="container" id="row1">
@@ -33,14 +33,16 @@
         <div class="container" id="row4">
                 <button id="zero" class="numbers">0</button>
                 <button class="numbers" id="dot">.</button>
-                <button id="equals" onclick="operate()">=</button>
+                <button id="equals" onclick="calculate()">=</button>
                 <button id="divisor" class="operators"> ÷ </button>
             </div>
         <div class="container" id="row5">
                 <button id="reset" onclick="reset()">Clear</button>
+                <button id="backspace" onclick="backspace()"><img src="back.svg" height="30px"></button>
             </div>
             <div class="drawings">
-                <img src="githublogo.svg" id="github">
+                <a target="_blank" href="https://github.com/Uzay-G/simple-calculator">
+                    <img src="githublogo.svg" id="github"></a>
                 <img src="calcicon.svg" id="icon"></div>
         <script src="code.js" type="text/javascript"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    </body>
