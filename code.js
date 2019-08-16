@@ -9,36 +9,49 @@ buttons.forEach(function(btn) {
         let value = document.getElementById("content").textContent 
         if (btn.getAttribute('id') != "reset" && btn.getAttribute('id') != "equals") {
             if (value == "0") document.getElementById("content").textContent = btn.textContent
-            else document.getElementById("content").textContent += btn.textContent}
+            else {
+                document.getElementById("content").textContent += btn.textContent
+                }
+            }
     })
 })
-
+function operate(operator, number1,number2) {
+    switch (operator) {
+        case '+':
+            return add(number1, number2);
+        case '-':
+            return substract(number1, number2);
+        case '×':
+            return multiply(number1, number2);
+        case "÷":
+            return divise(number1, number2);
+            break;
+    }
+}
 function reset() {
     document.getElementById("content").textContent = "0"
 }
+let classified;
 function calculate() {
     let operation = document.getElementById("content").textContent
-    let classified = operation.split(/[ ,]+/).filter(Boolean) 
+    classified = operation.split(/[ ,]+/).filter(Boolean) 
     let result = 0;
     classified.forEach((elem) => {
+        let current = operate(elem, classified[classified.indexOf(elem) - 1],classified[classified.indexOf(elem) + 1])
         if (elem == "×") {
-            let current = multiply( classified[classified.indexOf(elem) - 1], classified[classified.indexOf(elem) + 1])
-            result += current
+            result += current;
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
         if(elem == "÷") {
             console.log("Hey")
-            let current = divise( classified[classified.indexOf(elem) - 1], classified[classified.indexOf(elem) + 1])
             result += current
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
         if (elem == "+") {
-            let current = add(classified[classified.indexOf(elem) - 1], classified[classified.indexOf(elem) + 1])
             result += current;
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
         if (elem == "-") {
-            let current = substract(classified[classified.indexOf(elem) - 1], classified[classified.indexOf(elem) + 1])
             result += current;
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
@@ -56,9 +69,8 @@ document.addEventListener('keydown', function(event) {
     }
 });
 function backspace() {
-    let splitten = document.getElementById("content").textContent.split("")
-    splitten.pop()
-    document.getElementById("content").textContent = splitten.join("")
+    classified.pop()
+    document.getElementById("content").textContent = classified.join("")
 }
 function limitText(limitField, limitNum) {
     if (limitField.value.length > limitNum) {

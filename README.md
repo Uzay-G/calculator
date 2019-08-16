@@ -1,4 +1,4 @@
-# Simple Calculator
+# Calculator
 This project is a simple and smooth calculator. You can view the end result at . It allows the basic yet important functionalities a real calculator provides.
 
 ## What it taught me
