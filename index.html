@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Calculator</h1><br><br>
+        <h3 id="warning">Your mathematical operation is too long.</h3>
         <div class="bar">
             <div id="inside"><h1 id="content">0</h1>
                 </div>
@@ -28,13 +29,13 @@
                 <button id="seven" class="numbers">7</button>
                 <button class="numbers" id="eight">8</button>
                 <button id="nine" class="numbers">9</button>
-                <button id="times" class="operators"> × </button>
+                <button id="times" class="operators"> * </button>
             </div>
         <div class="container" id="row4">
                 <button id="zero" class="numbers">0</button>
                 <button class="numbers" id="dot">.</button>
                 <button id="equals" onclick="calculate()">=</button>
-                <button id="divisor" class="operators"> ÷ </button>
+                <button id="divisor" class="operators"> / </button>
             </div>
         <div class="container" id="row5">
                 <button id="reset" onclick="reset()">Clear</button>

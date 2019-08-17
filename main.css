@@ -2,11 +2,12 @@ body {
     text-align: center;
     margin: 0;
 }
-h1 {
+h1, h3 {
     text-emphasis: none;
     font-family: "Oswald", serif;
     font-weight: normal;
 }
+h3 {color: red}
 #content {
     margin-top: -0.01px;
 }
@@ -72,4 +73,7 @@ button:active {
 .drawings img {
     padding: 10px;
     width: 50px;
+}
+#warning {
+    display: none;
 }
