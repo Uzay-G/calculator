@@ -17,9 +17,12 @@ function operate(operator, number1,number2) {
             break;
     }
 }
+/* Reset calculator */
 function reset() {
     document.getElementById("content").textContent = "0"
 }
+/* Parse calculation -> analyse operator, operate accordingly and
+ replace that content with the result*/
 function calculate() {
     operation = document.getElementById("content").textContent
     classified = operation.split(/[ ,]+/).filter(Boolean) 
@@ -46,6 +49,7 @@ function calculate() {
     })
     document.getElementById("content").textContent = result;
 }
+/* Remove last entry */
 function backspace() {
     splitten = document.getElementById("content").textContent.split("")
     splitten.pop()
@@ -60,6 +64,7 @@ document.addEventListener('keydown', function(event) {
         else {
             if ((/[+\-*/.]/).test(character)) document.getElementById("content").textContent += " " + character.toString() + " "
             else {
+                if (document.getElementById("content").textContent.split(/[ ,]+/).filter(Boolean).length > 2) calculate()
                 document.getElementById("content").textContent += character.toString()
                 document.getElementById("warning").style.display = "none"
         }
@@ -68,6 +73,7 @@ document.addEventListener('keydown', function(event) {
     else if (event.key == "=") calculate()
 
 });
+// Parse Button clicks
 let buttons = document.querySelectorAll("button")
 buttons.forEach(function(btn) {
     btn.addEventListener('click', () => {
@@ -76,9 +82,13 @@ buttons.forEach(function(btn) {
             if (value == "0") document.getElementById("content").textContent = btn.textContent
             else {
                 if (value.length > 24) document.getElementById("warning").style.display = "block"
+                // Needs to be rendered more efficient
                 else {
-                    if (document.getElementById("content").textContent.split(/[ ,]+/).filter(Boolean).length > 2) calculate()
                     document.getElementById("content").textContent += btn.textContent
+                    if (document.getElementById("content").textContent.split(/[ ,]+/).filter(Boolean).length > 3) {
+                        calculate()
+                        document.getElementById("content").textContent += btn.textContent   
+                    }
                     document.getElementById("warning").style.display = "none"
                 }
                 }
