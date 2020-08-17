@@ -1,19 +1,19 @@
 let operation;
 let classified;
 const add = (a,b) => Number(a)+Number(b)
-const substract = (a,b) => Number(a)-Number(b)
+const subtract = (a,b) => Number(a)-Number(b)
 const multiply = (a,b)=> a*b
-const divise = (a,b)=>  a/b
+const divide = (a,b)=>  a/b
 function operate(operator, number1,number2) {
     switch (operator) {
         case '+':
             return add(number1, number2);
         case '-':
-            return substract(number1, number2);
+            return subtract(number1, number2);
         case '*':
             return multiply(number1, number2);
         case "/":
-            return divise(number1, number2);
+            return divide(number1, number2);
             break;
     }
 }
@@ -34,7 +34,6 @@ function calculate() {
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
         if(elem == "/") {
-            console.log("Hey")
             result += current
             classified.splice(classified.indexOf(elem) - 1, 3, current)
         }
